@@ -4,8 +4,8 @@ node_modules
 !/.gitignore
 !/.eslintrc*
 !/.babelrc
-test.js
-test.ts
+./test.js
+./test.ts
 sandbox.js
 ts
 ormconfig.json
