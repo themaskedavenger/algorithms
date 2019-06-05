@@ -1,8 +1,7 @@
 {
-  "name": "nodesiteinit",
   "version": "0.1.0",
   "description": "",
-  "main": "index.mjs",
+  "main": "",
   "scripts": {
     "build": "npm run lint && npm run test && npm run transpile",
     "copyts": "copyfiles -u 1 src/**/* ts",
@@ -19,16 +18,8 @@
     "transpile": "npm run createts && npm run deletebuild && tsc && npm run deletets",
     "watch": "npx nodemon"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/themaskedavenger/nodesiteinit.git"
-  },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/themaskedavenger/nodesiteinit/issues"
-  },
-  "homepage": "https://github.com/themaskedavenger/nodesiteinit#readme",
+  "license": "",
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
@@ -45,13 +36,14 @@
     "del-cli": "^1.1.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-ava": "^6.0.0",
+    "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react": "^7.13.0",
     "nodemon": "^1.18.11",
     "renamer": "^1.1.1",
     "ts-node": "^8.1.0",
-    "tslint": "^5.16.0",
+    "tslint": "^5.17.0",
     "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.4.4",
     "watch": "^1.0.2"

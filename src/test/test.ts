@@ -1,5 +1,5 @@
 /**
- * @file Main test file for Node Site Init.
+ * @file Main test file for $PROJECT_FULLNAME$.
  */
 
 // tslint:disable-next-line:import-name
@@ -9,6 +9,3 @@ test('General config is working', async (t) => {
   t.pass();
 });
 
-test('General config is working', async (t) => {
-
-});

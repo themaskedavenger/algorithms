@@ -1,0 +1,22 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-airbnb"
+  ],
+  "jsRules": {
+    "indent": "off",
+    "@typescript-eslint/indent": ["error", 2]
+  },
+  "rules": {
+    "brace-style": false,
+    "no-console": false,
+    "indent": "off",
+    "object-literal-sort-keys": false,
+    "object-shorthand-properties-first": false,
+    "one-line": ["check-open-brace"],
+    "variable-name": false,
+    "@typescript-eslint/indent": ["error", 2]
+  },
+  "rulesDirectory": []
+}

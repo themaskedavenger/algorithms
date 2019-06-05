@@ -1,1 +1,2 @@
-# nodesiteinit
+# $PROJECT_FULLNAME$ ($PROJECT_NAME$)
+
