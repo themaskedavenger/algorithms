@@ -11,11 +11,12 @@
   },
   "rules": {
     "brace-style": false,
-    "no-console": false,
+    "import-name": false,
     "indent": "off",
     "object-literal-sort-keys": false,
     "object-shorthand-properties-first": false,
     "one-line": ["check-open-brace"],
+    "prefer-array-literal": false,
     "variable-name": false,
     "@typescript-eslint/indent": ["error", 2]
   },
