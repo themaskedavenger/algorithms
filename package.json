@@ -15,6 +15,7 @@
     "start": "NODE_ENV='production' node build/start.js",
     "test": "ava-ts --verbose",
     "testbuild": "ava --verbose build/test/**/*",
+    "testfile": "ava-ts --verbose src/test/test.ts",
     "transpile": "npm run createts && npm run deletebuild && tsc && npm run deletets",
     "watch": "npx nodemon"
   },

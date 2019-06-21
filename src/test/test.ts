@@ -8,4 +8,3 @@ import test from 'ava';
 test('General config is working', async (t) => {
   t.pass();
 });
-
