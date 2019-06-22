@@ -68,6 +68,10 @@
     ]
   },
   "dependencies": {
-    "dotenv": "^8.0.0"
+    "deep-equal": "^1.0.1",
+    "dotenv": "^8.0.0",
+    "fs-extra": "^8.0.1",
+    "merge-deep": "^3.0.2",
+    "node-ini": "^1.0.0"
   }
 }
