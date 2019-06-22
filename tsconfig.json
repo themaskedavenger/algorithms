@@ -2,11 +2,10 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "module": "commonjs",
     "outDir": "build",
     "sourceMap": true,
     "strictNullChecks": true,
-    "target": "ESNext"
+    "target": "ES5"
   },
   "include": [
     "src/**/*"
