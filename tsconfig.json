@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "outDir": "build",
-    "strictNullChecks": true
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "target": "ESNext"
   },
   "include": [
     "src/**/*"

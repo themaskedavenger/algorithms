@@ -1,6 +1,8 @@
 {
   "extends": [
-    "airbnb",
-    "ava"
+    "airbnb"
+  ],
+  "plugins": [
+    "eslint-plugin-ava"
   ]
 }
