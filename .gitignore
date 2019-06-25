@@ -9,3 +9,5 @@ node_modules
 sandbox.js
 ts
 ormconfig.json
+src/test/.*
+src/**/.*
