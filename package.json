@@ -18,7 +18,9 @@
     "testfile": "ava-ts --verbose src/test/test.ts",
     "transpile": "yarn run createts && yarn run deletebuild && tsc && yarn run deletets",
     "watch": "npx nodemon",
-    "watcher": "yarn run build && yarn run testfile"
+    "watcher": "yarn run watcherCode",
+    "watcherJSX": "yarn run build && yarn run testfile",
+    "watcherCode": "yarn run testfile"
   },
   "author": "",
   "license": "",
