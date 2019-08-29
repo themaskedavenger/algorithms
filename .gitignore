@@ -11,3 +11,4 @@ ts
 ormconfig.json
 src/test/.*
 src/**/.*
+yarn-error.log
