@@ -12,3 +12,4 @@ ormconfig.json
 src/test/.*
 src/**/.*
 yarn-error.log
+.scriptHistory.json
