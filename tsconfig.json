@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "declaration": true,
     "esModuleInterop": true,
+    "lib": ["esnext"],
+    "moduleResolution": "node",
     "outDir": "build",
     "sourceMap": true,
     "strictNullChecks": true,
-    "target": "ES5"
+    "target": "ESNEXT"
   },
   "include": [
     "src/**/*"
