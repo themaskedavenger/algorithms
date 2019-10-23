@@ -3,6 +3,7 @@
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "esModuleInterop": true,
+    "experimentalDecorators": true,
     "jsx": "react",
     "lib": ["esnext"],
     "moduleResolution": "node",
