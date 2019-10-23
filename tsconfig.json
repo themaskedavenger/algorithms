@@ -10,7 +10,7 @@
     "outDir": "build",
     "sourceMap": true,
     "strictNullChecks": true,
-    "target": "ESNEXT"
+    "target": "es5"
   },
   "include": [
     "src/**/*"
