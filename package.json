@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
   "description": "",
-  "main": "",
+  "main": "build/index.js",
   "scripts": {
     "build": "yarn run build:lint && yarn run build:transpile",
     "build:lint": "tslint src/**/*",
