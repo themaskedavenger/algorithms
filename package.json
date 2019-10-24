@@ -19,6 +19,7 @@
     "start:prod": "NODE_ENV='production' node build/start.js",
     "test": "ava-ts --verbose",
     "test:file": "ava-ts --verbose src/test/test.ts",
+    "test:web": "yarn build && ts-node src/webtest/webtest.ts",
     "watch:dev": "chokidar 'src/**' -c 'yarn run start:dev'",
     "watch:devbuild": "chokidar 'src/**' -c 'yarn run start:devbuild'"
   },
