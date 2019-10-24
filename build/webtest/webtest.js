@@ -38,9 +38,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var _a, _b, _c;
+var _a, _b, _c, _d;
 Object.defineProperty(exports, "__esModule", { value: true });
 var path_1 = require("path");
+var apollo_1 = require("@enmesh/apollo");
 var core_1 = require("@enmesh/core");
 var pages_1 = require("@enmesh/pages");
 var webserver_1 = require("@enmesh/webserver");
@@ -62,6 +63,7 @@ var pageList = (_a = {},
 var enmesh = new core_1.Enmesh();
 var webserver = new webserver_1.WebserverModule();
 var pages = new pages_1.PagesModule();
+var apollo = new apollo_1.ApolloModule();
 var enmeshInitModules = [
     [
         webserver,
@@ -76,6 +78,24 @@ var enmeshInitModules = [
         {
             pages: pageList,
             pagesFolder: 'build/pages',
+        },
+    ],
+    [
+        apollo,
+        {
+            servers: (_d = {},
+                _d[webServerName1] = {
+                    schemata: {
+                        typeDefs: "\n                  type Query {\n                    testQuery: String!\n                  }\n                ",
+                        resolvers: {
+                            Query: {
+                                testQuery: function () { return 'Hello World!'; },
+                            },
+                        },
+                    },
+                    queries: {},
+                },
+                _d),
         },
     ],
 ];

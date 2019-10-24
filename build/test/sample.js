@@ -45,6 +45,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var ava_1 = __importDefault(require("ava"));
 var path_1 = require("path");
 var puppeteer_1 = __importDefault(require("puppeteer"));
+var apollo_1 = require("@enmesh/apollo");
 var core_1 = require("@enmesh/core");
 var pages_1 = require("@enmesh/pages");
 var assertions_1 = require("@enmesh/testutils/assertions");
@@ -75,10 +76,10 @@ ava_1.default.after.always(function (t) { return __awaiter(void 0, void 0, void 
     });
 }); });
 ava_1.default('Sample test', function (t) { return __awaiter(void 0, void 0, void 0, function () {
-    var name, port, pageName1, webServerName1, title, pageUrl1, page1, pageList, enmesh, webserver, pages, enmeshInitModules;
-    var _a, _b, _c;
-    return __generator(this, function (_d) {
-        switch (_d.label) {
+    var name, port, pageName1, webServerName1, title, pageUrl1, page1, pageList, enmesh, webserver, pages, apollo, enmeshInitModules;
+    var _a, _b, _c, _d;
+    return __generator(this, function (_e) {
+        switch (_e.label) {
             case 0:
                 name = '';
                 port = 3000;
@@ -98,6 +99,7 @@ ava_1.default('Sample test', function (t) { return __awaiter(void 0, void 0, voi
                 enmesh = new core_1.Enmesh();
                 webserver = new webserver_1.WebserverModule();
                 pages = new pages_1.PagesModule();
+                apollo = new apollo_1.ApolloModule();
                 enmeshInitModules = [
                     [
                         webserver,
@@ -114,13 +116,31 @@ ava_1.default('Sample test', function (t) { return __awaiter(void 0, void 0, voi
                             pagesFolder: 'build/pages',
                         },
                     ],
+                    [
+                        apollo,
+                        {
+                            servers: (_d = {},
+                                _d[webServerName1] = {
+                                    schemata: {
+                                        typeDefs: "\n                  type Query {\n                    testQuery: String!\n                  }\n                ",
+                                        resolvers: {
+                                            Query: {
+                                                testQuery: function () { return 'Hello World!'; },
+                                            },
+                                        },
+                                    },
+                                    queries: {},
+                                },
+                                _d),
+                        },
+                    ],
                 ];
                 return [4 /*yield*/, enmesh.init(enmeshInitModules)];
             case 1:
-                _d.sent();
+                _e.sent();
                 return [4 /*yield*/, enmesh.webserver[webServerName1].start()];
             case 2:
-                _d.sent();
+                _e.sent();
                 return [4 /*yield*/, assertions_1.assertPageContains(t, [name, 'Req1'], browser, pageUrl1, {
                         stringContains: [],
                         stringDoesNotContain: [],
@@ -129,22 +149,22 @@ ava_1.default('Sample test', function (t) { return __awaiter(void 0, void 0, voi
                         defaultTimeout: 2000,
                     })];
             case 3:
-                page1 = _d.sent();
+                page1 = _e.sent();
                 return [4 /*yield*/, page1.click('#')];
             case 4:
-                _d.sent();
+                _e.sent();
                 return [4 /*yield*/, page1.type('#', 'a')];
             case 5:
-                _d.sent();
+                _e.sent();
                 return [4 /*yield*/, page1.waitForSelector('', { timeout: 1000 })];
             case 6:
-                _d.sent();
+                _e.sent();
                 return [4 /*yield*/, assertions_1.assertPageContains(t, [name, 'Req1', 'FirstClick'], page1, null, {
                         stringContains: [],
                         stringDoesNotContain: [],
                     })];
             case 7:
-                page1 = _d.sent();
+                page1 = _e.sent();
                 return [2 /*return*/];
         }
     });
