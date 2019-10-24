@@ -4,6 +4,7 @@
 
 import { resolve } from 'path';
 
+import { ApolloModule } from '@enmesh/apollo';
 import { Enmesh, EnmeshModule } from '@enmesh/core';
 import { PagesModule } from '@enmesh/pages';
 import { WebserverModule } from '@enmesh/webserver';
@@ -30,6 +31,7 @@ const pageList = {
 const enmesh = new Enmesh();
 const webserver = new WebserverModule();
 const pages = new PagesModule();
+const apollo = new ApolloModule();
 
 const enmeshInitModules = [
   [
@@ -45,6 +47,28 @@ const enmeshInitModules = [
     {
       pages: pageList,
       pagesFolder: 'build/pages',
+    },
+  ],
+  [
+    apollo,
+    {
+      servers: {
+        [webServerName1]: {
+          schemata: {
+            typeDefs: `
+                  type Query {
+                    testQuery: String!
+                  }
+                `,
+            resolvers: {
+              Query: {
+                testQuery: () => 'Hello World!',
+              },
+            },
+          },
+          queries: {},
+        },
+      },
     },
   ],
 ];

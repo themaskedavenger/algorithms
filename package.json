@@ -32,6 +32,7 @@
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
     "@babel/register": "^7.6.2",
+    "@enmesh/apollo": "^0.1.103",
     "@enmesh/core": "^0.1.40",
     "@enmesh/pages": "^0.1.53",
     "@enmesh/testutils": "^0.1.31",

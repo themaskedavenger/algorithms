@@ -7,6 +7,7 @@ import test from 'ava';
 import { resolve } from 'path';
 import puppeteer from 'puppeteer';
 
+import { ApolloModule } from '@enmesh/apollo';
 import { Enmesh, EnmeshModule } from '@enmesh/core';
 import { PagesModule } from '@enmesh/pages';
 import {
@@ -58,6 +59,7 @@ test('Sample test', async (t) => {
   const enmesh = new Enmesh();
   const webserver = new WebserverModule();
   const pages = new PagesModule();
+  const apollo = new ApolloModule();
 
   const enmeshInitModules = [
     [
@@ -73,6 +75,28 @@ test('Sample test', async (t) => {
       {
         pages: pageList,
         pagesFolder: 'build/pages',
+      },
+    ],
+    [
+      apollo,
+      {
+        servers: {
+          [webServerName1]: {
+            schemata: {
+              typeDefs: `
+                  type Query {
+                    testQuery: String!
+                  }
+                `,
+              resolvers: {
+                Query: {
+                  testQuery: () => 'Hello World!',
+                },
+              },
+            },
+            queries: {},
+          },
+        },
       },
     ],
   ];
