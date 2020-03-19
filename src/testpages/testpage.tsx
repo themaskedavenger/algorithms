@@ -1,38 +1,22 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /**
  * @file Test page.
  */
 
-import React, { Component } from 'react';
+import React, { FC } from 'react';
 
-interface IProps {
+const TestPage: FC<{
   className?: string;
   [key: string]: any;
-}
-
-interface IState {
-  [key: string]: any;
-}
-
-export default class ClassName extends Component<IProps, IState> {
-  constructor(props) {
-    super(props);
+}> = ({ className }) => {
+  const classes: string[] = [''];
+  if (className) {
+    classes.push(className);
   }
 
-  public render() {
+  return (
+    <div className={classes.join(' ')} />
+  );
+};
 
-    const {
-      className,
-    } = this.props;
-
-    const classes: string[] = [''];
-    if (className) {
-      classes.push(className);
-    }
-
-    return (
-      <div className={classes.join(' ')}>
-
-      </div>
-    );
-  }
-}
+export default TestPage;

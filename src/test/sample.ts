@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /**
  * @file Sample unit test for Enmesh module.
  */
@@ -22,11 +23,11 @@ let browser;
 
 const testPagePath = resolve(__dirname, '../../build/testpages');
 
-test.before(async (t) => {
+test.before(async t => {
   browser = await puppeteer.launch();
 });
 
-test.after.always(async (t) => {
+test.after.always(async t => {
   await afterAlwaysAsync(
     [
       browser.close(),
@@ -35,7 +36,7 @@ test.after.always(async (t) => {
   );
 });
 
-test('Sample test', async (t) => {
+test('Sample test', async t => {
   const name = '';
   const port = 3000;
 
