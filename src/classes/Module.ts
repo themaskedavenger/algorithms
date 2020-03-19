@@ -4,13 +4,8 @@
 
 import { Enmesh, EnmeshModule } from '@enmesh/core';
 
-async function init(enmesh: Enmesh, config: any): Promise<void> {
-  // Init handler
-}
-
-async function handler1(enmesh: Enmesh, emit, ...emitterParams: any[]): Promise<any> {
-  // emitter function
-}
+import init from '../emitters/init';
+import handler1 from '../handlers/handler1';
 
 export default class Module extends EnmeshModule {
   public constructor() {

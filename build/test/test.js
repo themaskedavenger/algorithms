@@ -1,4 +1,5 @@
 "use strict";
+/* eslint-disable import/no-extraneous-dependencies */
 /**
  * @file Main test file for $PROJECT_FULLNAME$.
  */

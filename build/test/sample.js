@@ -1,4 +1,5 @@
 "use strict";
+/* eslint-disable import/no-extraneous-dependencies */
 /**
  * @file Sample unit test for Enmesh module.
  */

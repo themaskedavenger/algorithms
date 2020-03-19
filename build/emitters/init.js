@@ -1,7 +1,6 @@
 "use strict";
-/* eslint-disable import/no-extraneous-dependencies */
 /**
- * @file Sample unit test for Enmesh module.
+ * @file Enmesh module init handler.
  */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -39,78 +38,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var _a, _b, _c, _d;
 Object.defineProperty(exports, "__esModule", { value: true });
-var path_1 = require("path");
-var apollo_1 = require("@enmesh/apollo");
-var core_1 = require("@enmesh/core");
-var pages_1 = require("@enmesh/pages");
-var webserver_1 = require("@enmesh/webserver");
-var testPagePath = path_1.resolve(__dirname, '../../build/testpages');
-var name = '';
-var port = 4000;
-var pageName1 = name + "Page1";
-var webServerName1 = name + "WebServer";
-var title = name + " Title";
-var pageList = (_a = {},
-    _a[webServerName1] = (_b = {},
-        _b[pageName1] = {
-            title: title,
-            pageName: pageName1,
-            pagePath: testPagePath,
-        },
-        _b),
-    _a);
-var enmesh = new core_1.Enmesh();
-var webserver = new webserver_1.WebserverModule();
-var pages = new pages_1.PagesModule();
-var apollo = new apollo_1.ApolloModule();
-var enmeshInitModules = [
-    [
-        webserver,
-        (_c = {},
-            _c[webServerName1] = {
-                port: port,
-            },
-            _c),
-    ],
-    [
-        pages,
-        {
-            pages: pageList,
-            pagesFolder: 'build/pages',
-        },
-    ],
-    [
-        apollo,
-        {
-            servers: (_d = {},
-                _d[webServerName1] = {
-                    schemata: {
-                        typeDefs: "\n                  type Query {\n                    testQuery: String!\n                  }\n                ",
-                        resolvers: {
-                            Query: {
-                                testQuery: function () { return 'Hello World!'; },
-                            },
-                        },
-                    },
-                    queries: {},
-                },
-                _d),
-        },
-    ],
-];
-(function () { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, enmesh.init(enmeshInitModules)];
-            case 1:
-                _a.sent();
-                return [4 /*yield*/, enmesh.webserver[webServerName1].start()];
-            case 2:
-                _a.sent();
-                return [2 /*return*/];
-        }
+function init(enmesh, config) {
+    return __awaiter(this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/];
+        });
     });
-}); })();
-//# sourceMappingURL=webtest.js.map
+}
+exports.default = init;
+//# sourceMappingURL=init.js.map
