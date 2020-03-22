@@ -4,15 +4,15 @@
 
 import { Enmesh, EnmeshModule } from '@enmesh/core';
 
-import init from '../emitters/init';
-import handler1 from '../handlers/handler1';
+import init from '../handlers/init';
+import emitter1 from '../emitters/emitter1';
 
 export default class Module extends EnmeshModule {
   public constructor() {
     super({
       name: '',
       emitters: {
-        handler1,
+        emitter1,
       },
       handlers: {
         core: {
