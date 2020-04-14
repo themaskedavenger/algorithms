@@ -1,5 +1,4 @@
 "use strict";
-/* eslint-disable import/no-extraneous-dependencies */
 /**
  * @file Main test file for $PROJECT_FULLNAME$.
  */
@@ -43,6 +42,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/* eslint-disable import/no-extraneous-dependencies */
 var ava_1 = __importDefault(require("ava"));
 ava_1.default('General config is working', function (t) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {

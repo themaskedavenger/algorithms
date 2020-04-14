@@ -45,8 +45,12 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     'import/prefer-default-export': 'off',
     'indent': 'off',
+    'no-restricted-syntax': 'off',
     '@typescript-eslint/indent': ['error', 2],
     'react/jsx-indent': ['error', 2, {checkAttributes: true, indentLogicalExpressions: true}],
     'arrow-parens': ['error', 'as-needed'],
+
+    // Project specific
+    'no-param-reassign': 'off',
   },
 };
